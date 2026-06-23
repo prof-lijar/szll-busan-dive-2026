@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.pnpm-store/
+
+*.tsbuildinfo
+.DS_Store
+
+# Local/private source notes. Do not publish personal info.
+team-info.md
