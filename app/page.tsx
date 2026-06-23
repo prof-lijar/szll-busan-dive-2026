@@ -150,7 +150,7 @@ export default function Home() {
             <div className="max-w-5xl" aria-label="SZLL team name: Seungyeon, Zin, Lieng, Li Jar">
               <div className="flex flex-wrap items-end justify-center gap-2 sm:gap-3 lg:gap-4">
                 {nameLetters.map((item, index) => (
-                  <div key={`${item.letter}-${item.label}`} className="group relative">
+                  <div key={`${item.letter}-${item.label}`} className="szll-wave-letter group relative">
                     <button
                       type="button"
                       className={`relative z-10 flex h-24 w-20 items-center justify-center border-2 border-graphite ${item.color} ${item.tilt} font-mono text-7xl font-black leading-none shadow-hard transition duration-200 hover:-translate-y-2 hover:rotate-0 focus-visible:-translate-y-2 focus-visible:rotate-0 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-sea sm:h-32 sm:w-28 sm:text-8xl lg:h-44 lg:w-36 lg:text-[11rem]`}
