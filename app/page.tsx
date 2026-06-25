@@ -17,13 +17,13 @@ type TeamMember = {
 const members: TeamMember[] = [
   {
     name: "LI JAR",
-    role: "Team Lead • Planning • Development",
-    affiliation: "Nexter Co., Ltd.",
+    role: "Software Engineering • AI Researcher",
+    affiliation: "Nexter Co., Ltd. • KAIST OverEdge 2026 Participant",
     base: "Anyang",
     summary:
-      "Owns team direction from problem framing to final demo quality. Keeps scope realistic and makes sure every feature has a measurable purpose.",
-    strengths: ["Product framing", "Delivery management", "Cross-team coordination"],
-    contribution: "Project leadership, timeline control, and final storytelling.",
+      "Builds practical software systems around AI research, agent orchestration, data processing, and workflow automation.",
+    strengths: ["AI agent orchestration", "Software engineering", "Data processing", "Workflow automation"],
+    contribution: "AI agent engineering, system architecture, data workflows, and delivery coordination.",
     links: [
       { label: "Portfolio", href: "https://lijar.skilaxy.com" },
       { label: "GitHub", href: "https://github.com/prof-lijar" },
@@ -38,6 +38,7 @@ const members: TeamMember[] = [
       "Turns local context into practical UX decisions and keeps visual quality aligned with technical limits and hackathon rhythm.",
     strengths: ["Interaction design", "C# / Unreal", "3D rigging", "BGM production"],
     contribution: "Front-end behavior, visual direction, and user-flow execution.",
+    links: [{ label: "GitHub", href: "https://github.com/SeungYeon04" }],
   },
   {
     name: "Lieng Hongky",
@@ -78,7 +79,7 @@ const busanSignals = ["BEXCO-ready", "Coastal current", "Local context", "Fast d
 const operatingPrinciples = [
   {
     title: "Clear ownership",
-    detail: "Each lane has one owner with explicit boundaries and shared review checkpoints.",
+    detail: "Each responsibility has one owner with explicit boundaries and shared review checkpoints.",
   },
   {
     title: "Demo-first development",
@@ -226,11 +227,11 @@ export default function Home() {
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
             <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Team roster</p>
-            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Four lanes, one delivery system.</h2>
+            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Four members, one delivery system.</h2>
           </div>
           <p className="max-w-2xl text-lg leading-8 text-slate-300/78">
-            The team is presented by operating responsibility instead of profile images. Each member owns a practical lane that connects planning,
-            AI, platform engineering, and demo presentation.
+            The team is presented by operating responsibility instead of profile images. Each member owns a focused role that connects planning,
+            AI, platform engineering, and demo-ready presentation.
           </p>
         </div>
         <div className="mt-8 grid gap-4">
@@ -241,8 +242,7 @@ export default function Home() {
               style={{ animation: `riseIn 620ms cubic-bezier(.16,1,.3,1) ${index * 90}ms both` }}
             >
               <div>
-                <p className="font-mono text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">Lane {String(index + 1).padStart(2, "0")}</p>
-                <h3 className="mt-3 text-3xl font-black leading-none text-white">{member.name}</h3>
+                <h3 className="text-3xl font-black leading-none text-white">{member.name}</h3>
                 <p className="mt-3 font-mono text-xs font-black uppercase leading-5 tracking-[0.14em] text-cyan-300">{member.role}</p>
                 <p className="mt-4 font-mono text-xs uppercase leading-5 text-slate-300/55">
                   {member.affiliation} / {member.base}
