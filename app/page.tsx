@@ -36,7 +36,7 @@ const members: TeamMember[] = [
     base: "Busan",
     summary:
       "Turns local context into practical UX decisions and keeps visual quality aligned with technical limits and hackathon rhythm.",
-    strengths: ["Interaction design", "C# / Unreal", "3D rigging", "BGM production"],
+    strengths: ["Unreal BP", "Unity C#", "Google Cloud", "AI Agent", "Android App", "Pixel/2D Art"],
     contribution: "Front-end behavior, visual direction, and user-flow execution.",
     links: [{ label: "GitHub", href: "https://github.com/SeungYeon04" }],
   },
