@@ -18,7 +18,7 @@ const members: TeamMember[] = [
   {
     name: "LI JAR",
     role: "Software Engineering • AI Researcher",
-    affiliation: "Nexter Co., Ltd. • KAIST OverEdge 2026 Participant",
+    affiliation: "Nextor.AI • KAIST OverEdge 2026 Participant",
     base: "Anyang",
     summary:
       "Builds practical software systems around AI research, agent orchestration, data processing, and workflow automation.",
