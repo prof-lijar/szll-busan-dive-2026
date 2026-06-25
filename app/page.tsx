@@ -36,7 +36,7 @@ const members: TeamMember[] = [
     base: "Busan",
     summary:
       "Turns local context into practical UX decisions and keeps visual quality aligned with technical limits and hackathon rhythm.",
-    strengths: ["Interaction design", "C# / Unreal / Godot", "3D rigging", "BGM production"],
+    strengths: ["Interaction design", "C# / Unreal", "3D rigging", "BGM production"],
     contribution: "Front-end behavior, visual direction, and user-flow execution.",
   },
   {
@@ -223,38 +223,41 @@ export default function Home() {
       </section>
 
       <section id="members" className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-8">
-        <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Members</p>
-        <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Who does what.</h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Team roster</p>
+            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Four lanes, one delivery system.</h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-slate-300/78">
+            The team is presented by operating responsibility instead of profile images. Each member owns a practical lane that connects planning,
+            AI, platform engineering, and demo presentation.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4">
           {members.map((member, index) => (
             <article
               key={member.name}
-              className="grid gap-6 frost-panel p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/55 sm:grid-cols-[112px_1fr]"
+              className="team-row frost-panel grid gap-5 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/55 lg:grid-cols-[1.05fr_1.3fr_0.75fr] lg:items-start"
               style={{ animation: `riseIn 620ms cubic-bezier(.16,1,.3,1) ${index * 90}ms both` }}
             >
-              <div className="flex h-28 w-28 items-center justify-center border border-cyan-200/40 bg-cyan-300/15 font-mono text-2xl font-black uppercase tracking-[0.22em] text-cyan-100">
-                {member.name
-                  .split(" ")
-                  .map((part) => part[0])
-                  .join("")
-                  .slice(0, 2)}
-              </div>
               <div>
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-2xl font-black leading-none text-white">{member.name}</h3>
-                    <p className="mt-2 font-mono text-xs font-black uppercase tracking-[0.14em] text-cyan-300">{member.role}</p>
-                  </div>
-                </div>
+                <p className="font-mono text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">Lane {String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-3 text-3xl font-black leading-none text-white">{member.name}</h3>
+                <p className="mt-3 font-mono text-xs font-black uppercase leading-5 tracking-[0.14em] text-cyan-300">{member.role}</p>
                 <p className="mt-4 font-mono text-xs uppercase leading-5 text-slate-300/55">
                   {member.affiliation} / {member.base}
                 </p>
-                <p className="mt-5 text-base leading-7 text-slate-300/85">{member.summary}</p>
+              </div>
+              <div>
+                <p className="text-base leading-7 text-slate-300/85">{member.summary}</p>
                 <div className="mt-5 border-l-4 border-cyan-300/60 pl-4">
                   <p className="font-mono text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Main responsibility</p>
                   <p className="mt-2 text-sm leading-6 text-slate-300/80">{member.contribution}</p>
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2">
+              </div>
+              <div className="lg:border-l lg:border-cyan-200/15 lg:pl-5">
+                <p className="font-mono text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Skill signal</p>
+                <div className="mt-3 flex flex-wrap gap-2">
                   {member.strengths.map((skill) => (
                     <span key={skill} className="border border-cyan-300/25 bg-cyan-300/10 px-2.5 py-1 font-mono text-[11px] font-black uppercase text-cyan-200">
                       {skill}
@@ -309,7 +312,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative z-10 border-t border-white/10 bg-[#061122]/80 px-5 py-12 backdrop-blur-sm sm:px-8">
+      <section id="contact" className="footer-panorama relative z-10 border-t border-white/10 px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
           <h2 className="max-w-4xl text-balance text-5xl font-black leading-tight sm:text-6xl">Focused team. Real execution. DIVE 2026 ready.</h2>
           <div className="border border-cyan-300/40 bg-[#050814] p-5">
