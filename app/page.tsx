@@ -103,8 +103,15 @@ const capabilityBars = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#04060f] text-slate-100">
-      <section className="section-art section-art-hero relative isolate border-b border-white/10 bg-[#04060f] py-8 sm:py-12">
+    <main className="site-canvas relative min-h-screen overflow-x-hidden text-slate-100">
+      <div className="page-backdrop" aria-hidden="true">
+        <div className="page-art page-art-primary" />
+        <div className="page-art page-art-secondary" />
+        <div className="page-aurora" />
+        <div className="page-grid" />
+      </div>
+
+      <section className="relative isolate z-10 border-b border-white/10 py-8 sm:py-12">
         <div className="absolute inset-0 -z-10 tech-grid opacity-40" />
         <div className="noise-bg absolute inset-0 -z-10" />
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -203,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-art section-art-about mx-auto max-w-6xl px-5 py-10 sm:px-8">
+      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <div className="frost-panel p-6 sm:p-10">
           <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-cyan-300">About us</p>
           <h2 className="mt-4 text-balance text-4xl font-black leading-tight sm:text-5xl">Team introduction with Busan execution energy</h2>
@@ -215,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="members" className="section-art section-art-members mx-auto max-w-6xl px-5 py-10 sm:px-8">
+      <section id="members" className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Members</p>
         <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Who does what.</h2>
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
@@ -269,7 +276,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-art section-art-work mx-auto max-w-6xl px-5 py-10 sm:px-8">
+      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
             <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">How we work</p>
@@ -289,7 +296,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-art section-art-capability mx-auto max-w-6xl px-5 py-10 sm:px-8">
+      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Capability map</p>
         <h2 className="mt-3 text-5xl font-black leading-tight sm:text-6xl">What we can deliver in two days.</h2>
         <div className="mt-8 divide-y-2 divide-white/10 border-y-2 border-white/15">
@@ -302,7 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="section-art section-art-contact border-t border-white/10 bg-[#061122] px-5 py-12 sm:px-8">
+      <section id="contact" className="relative z-10 border-t border-white/10 bg-[#061122]/80 px-5 py-12 backdrop-blur-sm sm:px-8">
         <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
           <h2 className="max-w-4xl text-balance text-5xl font-black leading-tight sm:text-6xl">Focused team. Real execution. DIVE 2026 ready.</h2>
           <div className="border border-cyan-300/40 bg-[#050814] p-5">
