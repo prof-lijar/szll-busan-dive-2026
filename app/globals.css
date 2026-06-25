@@ -47,6 +47,70 @@ a {
   mix-blend-mode: screen;
 }
 
+.section-art {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.section-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(4, 6, 15, 0.93), rgba(4, 6, 15, 0.68), rgba(4, 6, 15, 0.92)),
+    url("/images/busan-ai-future-panorama.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.42;
+  filter: saturate(1.12) contrast(1.05);
+}
+
+.section-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(93, 226, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 226, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+.section-art-hero::before {
+  background-position: center top;
+  opacity: 0.52;
+}
+
+.section-art-about::before {
+  background-position: 18% center;
+}
+
+.section-art-members::before {
+  background-position: 42% center;
+  opacity: 0.34;
+}
+
+.section-art-work::before {
+  background-position: 64% center;
+  opacity: 0.38;
+}
+
+.section-art-capability::before {
+  background-position: 82% center;
+  opacity: 0.36;
+}
+
+.section-art-contact::before {
+  background-position: right bottom;
+  opacity: 0.5;
+}
+
 .data-flow-layer {
   opacity: 0.8;
 }
