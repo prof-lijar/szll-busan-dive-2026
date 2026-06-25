@@ -1,39 +1,53 @@
-const members = [
+type TeamLink = {
+  label: string;
+  href: string;
+};
+
+type Member = {
+  name: string;
+  role: string;
+  affiliation: string;
+  base: string;
+  summary: string;
+  strengths: string[];
+  contribution: string;
+  links?: TeamLink[];
+};
+
+const members: Member[] = [
   {
     name: "LI JAR",
-    nativeName: "",
-    role: "Team lead / Planning / Development",
+    role: "Team Lead • Planning • Development",
     affiliation: "Nexter Co., Ltd.",
-    origin: "Myanmar",
     base: "Anyang",
     summary:
-      "Coordinates the team, frames the problem, keeps scope realistic, and connects technical decisions to the final presentation.",
-    strengths: ["Product framing", "Delivery management", "Full-stack coordination"],
-    contribution: "Lead team alignment, program communication, architecture direction, and demo readiness.",
+      "Shapes project strategy, translates problems into clear scopes, and keeps every feature tied to a measurable demo outcome.",
+    strengths: ["Product framing", "Delivery management", "Cross-team architecture"],
+    contribution: "Program communication, roadmap control, risk handling, and final presentation coherence.",
+    links: [
+      { label: "Portfolio", href: "https://lijar.skilaxy.com" },
+      { label: "GitHub", href: "https://github.com/prof-lijar" },
+    ],
   },
   {
     name: "Lee Seungyeon",
-    nativeName: "이승연",
-    role: "Planning / Development / Design",
+    role: "Planning • Development • Design",
     affiliation: "Sortech Co., Ltd.",
-    origin: "Korea",
     base: "Busan",
     summary:
-      "Adds local Busan context, design judgement, and interactive production skills across game engines, media, and release workflows.",
-    strengths: ["Design thinking", "C# / Unreal / Godot", "3D rigging", "BGM production"],
-    contribution: "Shape the user experience, visual direction, prototype interaction, and local relevance.",
+      "Adds local Busan perspective, interaction design judgment, and production fluency across game engines and media workflows.",
+    strengths: ["Design systems", "C# / Unreal / Godot", "3D rigging", "BGM production"],
+    contribution: "Owns front-end behavior, interaction quality, and launch-ready visuals.",
   },
   {
     name: "Lieng Hongky",
-    nativeName: "",
-    role: "Development / Design",
+    role: "Development • AI",
     affiliation: "Independent Developer",
-    origin: "Cambodia",
     base: "Busan",
     summary:
-      "Computer science and AI graduate from Pusan National University with depth in computer vision, image restoration, and multi-platform software.",
-    strengths: ["Computer vision", "Image enhancement", "Swift", "ReactJS", "NestJS", "Unity3D"],
-    contribution: "Own AI vision experiments, image/data processing, and rapid frontend or app implementation.",
+      "Builds computer vision and image-processing experiments into practical features that can be demonstrated under real constraints.",
+    strengths: ["Computer vision", "Image restoration", "Swift", "React", "NestJS", "Unity"],
+    contribution: "Responsible for AI prototyping, media/data processing, and rapid integration.",
     links: [
       { label: "GitHub", href: "https://github.com/lienghongky/" },
       { label: "Portfolio", href: "https://hongky.netlify.app/" },
@@ -41,179 +55,149 @@ const members = [
   },
   {
     name: "Zin Ko Naing",
-    nativeName: "진코나잉",
-    role: "Development / Design",
+    role: "Development • Platform",
     affiliation: "Namu-iAPT Enterprise",
-    origin: "Myanmar",
     base: "Jeonju",
     summary:
-      "Full-stack developer studying software engineering in Jeonju, with production experience in Next.js, Spring Boot, databases, and SaaS UI performance.",
+      "Delivers robust web architecture and data-flow reliability, with practical experience in full-stack delivery and deployment.",
     strengths: ["Next.js", "TypeScript", "Spring Boot", "MySQL", "MongoDB", "CI/CD"],
-    contribution: "Build reliable web flows, connect backend services, optimize UI performance, and support deployment.",
+    contribution: "Builds platform layer, data pipelines, and performance-safe implementation patterns.",
     links: [{ label: "Portfolio", href: "https://www.devzinko.site/" }],
   },
 ];
 
-const nameLetters = [
-  {
-    letter: "S",
-    member: members[1],
-    label: "Seungyeon",
-    punch: "Busan signal",
-    note: "Design, planning, and playable interaction energy.",
-    color: "bg-coral text-white",
-    tilt: "-rotate-2",
-  },
-  {
-    letter: "Z",
-    member: members[3],
-    label: "Zin",
-    punch: "System maker",
-    note: "Next.js, Spring, data flows, and clean delivery.",
-    color: "bg-sea text-white",
-    tilt: "rotate-1",
-  },
-  {
-    letter: "L",
-    member: members[2],
-    label: "Lieng",
-    punch: "Vision brain",
-    note: "Computer vision, image enhancement, and multi-platform builds.",
-    color: "bg-yellow text-graphite",
-    tilt: "-rotate-1",
-  },
-  {
-    letter: "L",
-    member: members[0],
-    label: "Li Jar",
-    punch: "Team compass",
-    note: "Keeps scope, story, and build direction aligned.",
-    color: "bg-mint text-graphite",
-    tilt: "rotate-2",
-  },
+const diveSignals = [
+  ["Date", "Jul 25-26, 2026"],
+  ["Venue", "BEXCO Exhibition Center 2, Hall 4F / Busan"],
+  ["Participants", "Around 300 participants"],
+  ["Team size", "2 to 4 members per team"],
+  ["Awards", "Total 10,000,000 KRW"],
+];
+
+const programSteps = [
+  "Applications and document review",
+  "Online orientation then pre-development period",
+  "Submission of development proposals and tracks selection",
+  "Two-day final contest with onsite mentoring",
+  "Final presentation and awards",
 ];
 
 const collaboration = [
   {
-    label: "Team lead",
-    value: "One person keeps communication, schedule changes, and presentation decisions clear.",
+    title: "Clear command line",
+    detail:
+      "One lead sets priorities, each member has ownership, and the team checks checkpoints every day so nothing drifts before judge review.",
   },
   {
-    label: "Local anchor",
-    value: "Busan-based members help the team stay practical about venue flow, local context, and onsite coordination.",
+    title: "Busan-native execution",
+    detail:
+      "We are aligned for local pace, communication style, and on-site coordination for practical delivery and venue readiness.",
   },
   {
-    label: "Balanced build",
-    value: "Planning, AI, frontend, backend, design, game/media, and deployment skills are covered without relying on one person.",
+    title: "Demo-first rhythm",
+    detail:
+      "The product path is built around a visible demo, with a stable minimum viable output before polishing and storytelling.",
   },
   {
-    label: "Demo discipline",
-    value: "The team works toward a clear prototype, a visible user story, and a demo that is easy to follow.",
+    title: "Cross-skill resilience",
+    detail:
+      "Planning, AI, frontend, backend, and platform delivery are covered by different specialists to reduce single-point risk.",
   },
 ];
 
 const readiness = [
-  ["AI & Data", "Computer vision, image restoration, Python scripting, and data-backed product thinking."],
-  ["Web Product", "Next.js, React, TypeScript, Spring Boot, NestJS, Node.js, MySQL, MongoDB, and Firebase."],
-  ["Creative Prototype", "Design, 3D rigging, Unity3D, Unreal, Godot, BGM production, and app/game release experience."],
-  ["Program Fit", "A multinational team already based across Korea with direct Busan participation and clear role coverage."],
+  ["Data to solution", "Real dataset understanding, cleaning, analysis logic, and solution framing from public data contexts."],
+  ["Web engineering", "Next.js and TypeScript production setup with robust UI, API, and deployment practices."],
+  ["AI prototypes", "Computer vision workflows for image enhancement and practical intelligence features."],
+  ["Experience design", "Interaction direction and media execution so judges can understand the value in one flow."],
+];
+
+const timeline = [
+  { day: "DAY 1", label: "Start sequence" },
+  { day: "DAY 2", label: "Demo and final presentations" },
+  { day: "Main Goal", label: "Prototype + clear story + repeatable demo" },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-paper text-graphite">
-      <section className="relative border-b-2 border-graphite bg-paper">
-        <div className="absolute inset-0 bg-grid opacity-45" />
-
-        <header className="relative z-10 flex items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
-          <a href="#" className="font-mono text-sm font-bold uppercase tracking-[0.22em]">
-            SZLL
-          </a>
-          <nav className="hidden items-center gap-6 font-mono text-xs font-bold uppercase tracking-[0.16em] text-graphite/70 sm:flex">
-            <a className="hover:text-coral" href="#members">
-              Members
-            </a>
-            <a className="hover:text-coral" href="#collaboration">
-              Team building
-            </a>
-            <a className="hover:text-coral" href="#contact">
-              Contact
-            </a>
-          </nav>
-        </header>
-
-        <div className="relative z-10 flex min-h-[86svh] items-center justify-center px-5 pb-14 pt-10 text-center sm:px-8 lg:px-12">
-          <div className="flex flex-col items-center">
-            <p className="mb-5 w-fit rotate-[-1.5deg] border-2 border-graphite bg-coral px-3 py-2 font-mono text-xs font-black uppercase tracking-[0.18em] text-white shadow-hard">
-              Busan DIVE 2026 team
+    <main className="relative min-h-screen overflow-x-hidden bg-[#04060f] text-slate-100">
+      <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#04060f] py-8 sm:py-12">
+        <div className="absolute inset-0 -z-10 tech-grid opacity-40" />
+        <div className="noise-bg absolute inset-0 -z-10" />
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 pb-10 pt-6 sm:px-8 lg:flex-row lg:items-end lg:justify-between lg:pb-16 lg:pt-8">
+          <div className="max-w-2xl">
+            <p className="mb-5 inline-flex border border-cyan-300/40 bg-cyan-300/10 px-3 py-2 font-mono text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
+              DIVE 2026 Team Intro
             </p>
-            <div className="max-w-5xl" aria-label="SZLL team name: Seungyeon, Zin, Lieng, Li Jar">
-              <div className="flex flex-wrap items-end justify-center gap-2 sm:gap-3 lg:gap-4">
-                {nameLetters.map((item, index) => (
-                  <div key={`${item.letter}-${item.label}`} className="szll-wave-letter group relative">
-                    <button
-                      type="button"
-                      className={`relative z-10 flex h-24 w-20 items-center justify-center border-2 border-graphite ${item.color} ${item.tilt} font-mono text-7xl font-black leading-none shadow-hard transition duration-200 hover:-translate-y-2 hover:rotate-0 focus-visible:-translate-y-2 focus-visible:rotate-0 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-sea sm:h-32 sm:w-28 sm:text-8xl lg:h-44 lg:w-36 lg:text-[11rem]`}
-                      aria-describedby={`letter-card-${index}`}
-                    >
-                      {item.letter}
-                    </button>
-                    <div
-                      id={`letter-card-${index}`}
-                      className="pointer-events-none absolute bottom-full left-0 z-20 mb-4 w-[min(18rem,82vw)] translate-y-2 border-2 border-graphite bg-white p-4 text-left opacity-0 shadow-hard transition duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 sm:left-1/2 sm:-translate-x-1/2"
-                    >
-                      <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-coral">{item.punch}</p>
-                      <p className="mt-2 text-2xl font-black leading-none">{item.label}</p>
-                      <p className="mt-1 font-mono text-[11px] font-bold uppercase leading-5 text-graphite/50">
-                        {item.member.role} / {item.member.base}
-                      </p>
-                      <p className="mt-3 text-sm font-semibold leading-6 text-graphite/74">{item.note}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              className="mt-9 grid w-full max-w-3xl grid-cols-2 gap-2 font-mono text-xs font-black uppercase tracking-[0.12em] sm:grid-cols-4 sm:gap-3 sm:text-sm"
-              aria-label="SZLL slogan: Start, Zoom in, Link up, Launch"
-            >
-              {[
-                ["S", "Start"],
-                ["Z", "Zoom in"],
-                ["L", "Link up"],
-                ["L", "Launch"],
-              ].map(([initial, word]) => (
-                <div key={word} className="flex items-center justify-center gap-2 border-2 border-graphite bg-white px-3 py-3 shadow-hard-sm">
-                  <span className="text-coral">{initial}</span>
-                  <span>{word}</span>
-                </div>
-              ))}
-            </div>
+            <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-7xl">SZLL</h1>
+            <p className="mt-4 max-w-xl text-lg text-cyan-100/80 sm:text-xl">
+              Built for real-world data hackathon execution. We are designed to move from{" "}
+              <span className="font-black text-cyan-300">problem framing to deployable demo</span> with predictable team flow.
+            </p>
+            <nav className="mt-7 flex flex-wrap gap-4 text-xs font-black uppercase tracking-[0.18em]">
+              <a href="#members" className="border border-white/20 bg-white/5 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
+                Members
+              </a>
+              <a href="#program-fit" className="border border-white/20 bg-white/5 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
+                Program Fit
+              </a>
+              <a href="#contact" className="border border-white/20 bg-white/5 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
+                Contact
+              </a>
+            </nav>
+          </div>
+          <div className="grid w-full max-w-xl gap-3 sm:grid-cols-2 lg:w-auto">
+            {diveSignals.map(([key, value]) => (
+              <article key={key} className="frost-panel p-4">
+                <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{key}</p>
+                <p className="mt-1 text-sm leading-6 text-white/85">{value}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="members" className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mb-10 grid gap-5 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
-          <div>
-            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-coral">Members first</p>
-            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-none sm:text-7xl">
-              Who does what, and why it helps the program.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-xl leading-8 text-graphite/72">
-            Each member has a clear lane, relevant background, and a practical contribution for the two-day hackathon.
+      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:py-16">
+        <div className="frost-panel p-8">
+          <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-cyan-300">About DIVE 2026</p>
+          <h2 className="mt-4 text-balance text-4xl font-black leading-tight sm:text-5xl">Data, AI, and product thinking under real constraints.</h2>
+          <p className="mt-6 text-lg text-slate-200/80">
+            DIVE is a data-driven hackathon for practical teams to solve real problems with real data, guided by public and private sector
+            experts in Busan.
           </p>
+          <a
+            className="mt-8 inline-flex border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-cyan-200 transition hover:bg-cyan-300/20"
+            href="https://www.dxchallenge.co.kr/dive-2026"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Official Program Page
+          </a>
         </div>
+        <div className="frost-panel p-8">
+          <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-cyan-300">Flow Snapshot</p>
+          <ol className="mt-6 space-y-4 text-base leading-7 text-slate-200/88">
+            {programSteps.map((step) => (
+              <li key={step} className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
-        <div className="grid gap-5 lg:grid-cols-2">
+      <section id="members" className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:py-16">
+        <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Members</p>
+        <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Clear responsibilities, fast execution.</h2>
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {members.map((member, index) => (
             <article
               key={member.name}
-              className="group grid gap-6 border-2 border-graphite bg-white p-5 shadow-hard transition duration-200 hover:-translate-y-1 hover:bg-cream sm:grid-cols-[112px_1fr]"
-              style={{ animation: `riseIn 620ms cubic-bezier(.16,1,.3,1) ${index * 80}ms both` }}
+              className="grid gap-6 frost-panel p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/55 sm:grid-cols-[112px_1fr]"
+              style={{ animation: `riseIn 620ms cubic-bezier(.16,1,.3,1) ${index * 90}ms both` }}
             >
-              <div className="flex h-28 w-28 items-center justify-center border-2 border-graphite bg-sea font-mono text-3xl font-black text-white shadow-hard-sm">
+              <div className="flex h-28 w-28 items-center justify-center border border-cyan-200/40 bg-cyan-300/15 font-mono text-2xl font-black uppercase tracking-[0.22em] text-cyan-100">
                 {member.name
                   .split(" ")
                   .map((part) => part[0])
@@ -223,32 +207,29 @@ export default function Home() {
               <div>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-3xl font-black leading-none">
-                      {member.name}
-                      {member.nativeName ? <span className="ml-2 text-xl text-graphite/55">{member.nativeName}</span> : null}
-                    </h3>
-                    <p className="mt-2 font-mono text-xs font-bold uppercase tracking-[0.14em] text-coral">{member.role}</p>
+                    <h3 className="text-2xl font-black leading-none text-white">{member.name}</h3>
+                    <p className="mt-2 font-mono text-xs font-black uppercase tracking-[0.14em] text-cyan-300">{member.role}</p>
                   </div>
                 </div>
-                <p className="mt-4 font-mono text-xs uppercase leading-5 text-graphite/55">
-                  {member.affiliation} / {member.origin} / {member.base}
+                <p className="mt-4 font-mono text-xs uppercase leading-5 text-slate-300/55">
+                  {member.affiliation} / {member.base}
                 </p>
-                <p className="mt-5 text-base leading-7 text-graphite/78">{member.summary}</p>
-                <div className="mt-5 border-l-4 border-coral pl-4">
-                  <p className="font-mono text-xs font-black uppercase tracking-[0.16em]">Expected contribution</p>
-                  <p className="mt-2 text-sm leading-6 text-graphite/72">{member.contribution}</p>
+                <p className="mt-5 text-base leading-7 text-slate-300/85">{member.summary}</p>
+                <div className="mt-5 border-l-4 border-cyan-300/60 pl-4">
+                  <p className="font-mono text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Expected contribution</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300/80">{member.contribution}</p>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {member.strengths.map((skill) => (
-                    <span key={skill} className="border border-graphite/30 bg-paper px-2.5 py-1 font-mono text-[11px] font-bold uppercase">
+                    <span key={skill} className="border border-cyan-300/25 bg-cyan-300/10 px-2.5 py-1 font-mono text-[11px] font-black uppercase text-cyan-200">
                       {skill}
                     </span>
                   ))}
                 </div>
                 {member.links ? (
-                  <div className="mt-5 flex gap-4 font-mono text-xs font-black uppercase tracking-[0.12em] text-sea">
+                  <div className="mt-5 flex flex-wrap gap-4 font-mono text-xs font-black uppercase tracking-[0.12em] text-cyan-200">
                     {member.links.map((link) => (
-                      <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="hover:text-coral">
+                      <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="hover:text-white">
                         {link.label}
                       </a>
                     ))}
@@ -260,59 +241,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="collaboration" className="border-y-2 border-graphite bg-graphite px-5 py-16 text-paper sm:px-8 lg:px-12 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
+      <section id="program-fit" className="border-y border-white/10 bg-[#061122] px-5 py-12 sm:px-8 lg:px-0 lg:py-16">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.9fr_1.1fr]">
           <div>
-            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-mint">Team building</p>
-            <h2 className="mt-3 max-w-2xl text-balance text-5xl font-black leading-none sm:text-7xl">
-              How SZLL works together.
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-paper/68">
-              SZLL is not presented as four isolated resumes. The operating model is simple: one lead, clear member lanes,
-              overlapping implementation skills, and a final demo path from the first day.
+            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Execution model</p>
+            <h2 className="mt-3 max-w-2xl text-balance text-5xl font-black leading-tight sm:text-6xl">How SZLL builds toward winning.</h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300/72">
+              Roles are assigned to checkpoints, not just titles. We keep the team moving with daily validation and explicit owner boundaries.
             </p>
+            <div className="mt-8 grid gap-2 sm:grid-cols-2">
+              {timeline.map((item) => (
+                <div key={item.day} className="frost-panel p-4">
+                  <p className="font-mono text-xs font-black uppercase text-cyan-200">{item.day}</p>
+                  <p className="mt-2 text-slate-100">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid gap-px overflow-hidden border-2 border-paper bg-paper md:grid-cols-2">
+          <div className="grid gap-2 overflow-hidden border border-white/15 md:grid-cols-2">
             {collaboration.map((item) => (
-              <div key={item.label} className="bg-graphite p-6">
-                <h3 className="font-mono text-xl font-black uppercase text-yellow">{item.label}</h3>
-                <p className="mt-4 leading-7 text-paper/72">{item.value}</p>
+              <div key={item.title} className="p-6 frost-panel">
+                <h3 className="font-mono text-xl font-black uppercase text-cyan-200">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-300/78">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-coral">Readiness</p>
-            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-none sm:text-7xl">
-              Relevant skills without role confusion.
-            </h2>
+            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Readiness map</p>
+            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">What the team can execute.</h2>
           </div>
-          <div className="divide-y-2 divide-graphite border-y-2 border-graphite">
+          <div className="divide-y-2 divide-white/10 border-y-2 border-white/15">
             {readiness.map(([title, body]) => (
-              <div key={title} className="grid gap-4 py-6 sm:grid-cols-[170px_1fr]">
-                <h3 className="font-mono text-xl font-black uppercase text-sea">{title}</h3>
-                <p className="text-lg leading-8 text-graphite/76">{body}</p>
+              <div key={title} className="grid gap-4 py-6 sm:grid-cols-[180px_1fr]">
+                <h3 className="font-mono text-xl font-black uppercase text-cyan-200">{title}</h3>
+                <p className="text-lg leading-8 text-slate-300/80">{body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="border-t-2 border-graphite bg-coral px-5 py-12 text-white sm:px-8 lg:px-12">
-        <div className="grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
-          <h2 className="max-w-4xl text-balance text-5xl font-black leading-none sm:text-7xl">
-            Built to collaborate, build, and present at DIVE 2026.
+      <section id="contact" className="border-t border-white/10 bg-[#061122] px-5 py-12 sm:px-8 lg:py-16">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <h2 className="max-w-4xl text-balance text-5xl font-black leading-tight sm:text-6xl">
+            Built to collaborate, execute, and present at DIVE 2026.
           </h2>
-          <div className="border-2 border-white bg-graphite p-5 shadow-hard-white">
-            <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-mint">Primary contact</p>
-            <a className="mt-3 block text-2xl font-black hover:text-yellow" href="mailto:davidbeljar@gmail.com">
+          <div className="border border-cyan-300/40 bg-[#050814] p-5">
+            <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-cyan-300">Primary contact</p>
+            <a className="mt-3 block text-2xl font-black text-cyan-100 hover:text-white" href="mailto:davidbeljar@gmail.com">
               davidbeljar@gmail.com
             </a>
-            <p className="mt-4 text-sm leading-6 text-white/70">Team name: SZLL / DIVE 2026 Hackathon / Busan</p>
+            <p className="mt-4 text-sm leading-6 text-slate-200/70">Team name: SZLL / DIVE 2026 Hackathon / Busan</p>
           </div>
         </div>
       </section>
