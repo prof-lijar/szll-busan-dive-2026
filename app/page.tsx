@@ -3,7 +3,7 @@ type TeamLink = {
   href: string;
 };
 
-type Member = {
+type TeamMember = {
   name: string;
   role: string;
   affiliation: string;
@@ -14,16 +14,16 @@ type Member = {
   links?: TeamLink[];
 };
 
-const members: Member[] = [
+const members: TeamMember[] = [
   {
     name: "LI JAR",
     role: "Team Lead • Planning • Development",
     affiliation: "Nexter Co., Ltd.",
     base: "Anyang",
     summary:
-      "Shapes project strategy, translates problems into clear scopes, and keeps every feature tied to a measurable demo outcome.",
-    strengths: ["Product framing", "Delivery management", "Cross-team architecture"],
-    contribution: "Program communication, roadmap control, risk handling, and final presentation coherence.",
+      "Owns team direction from problem framing to final demo quality. Keeps scope realistic and makes sure every feature has a measurable purpose.",
+    strengths: ["Product framing", "Delivery management", "Cross-team coordination"],
+    contribution: "Project leadership, timeline control, and final storytelling.",
     links: [
       { label: "Portfolio", href: "https://lijar.skilaxy.com" },
       { label: "GitHub", href: "https://github.com/prof-lijar" },
@@ -35,9 +35,9 @@ const members: Member[] = [
     affiliation: "Sortech Co., Ltd.",
     base: "Busan",
     summary:
-      "Adds local Busan perspective, interaction design judgment, and production fluency across game engines and media workflows.",
-    strengths: ["Design systems", "C# / Unreal / Godot", "3D rigging", "BGM production"],
-    contribution: "Owns front-end behavior, interaction quality, and launch-ready visuals.",
+      "Turns local context into practical UX decisions and keeps visual quality aligned with technical limits and hackathon rhythm.",
+    strengths: ["Interaction design", "C# / Unreal / Godot", "3D rigging", "BGM production"],
+    contribution: "Front-end behavior, visual direction, and user-flow execution.",
   },
   {
     name: "Lieng Hongky",
@@ -45,9 +45,9 @@ const members: Member[] = [
     affiliation: "Independent Developer",
     base: "Busan",
     summary:
-      "Builds computer vision and image-processing experiments into practical features that can be demonstrated under real constraints.",
+      "Builds AI-assisted features into deployable components quickly, with emphasis on practical data/image processing workflows.",
     strengths: ["Computer vision", "Image restoration", "Swift", "React", "NestJS", "Unity"],
-    contribution: "Responsible for AI prototyping, media/data processing, and rapid integration.",
+    contribution: "AI prototyping, media processing, and rapid feature integration.",
     links: [
       { label: "GitHub", href: "https://github.com/lienghongky/" },
       { label: "Portfolio", href: "https://hongky.netlify.app/" },
@@ -59,97 +59,143 @@ const members: Member[] = [
     affiliation: "Namu-iAPT Enterprise",
     base: "Jeonju",
     summary:
-      "Delivers robust web architecture and data-flow reliability, with practical experience in full-stack delivery and deployment.",
+      "Strengthens backend reliability and data pipelines, and keeps engineering decisions practical for contest pacing.",
     strengths: ["Next.js", "TypeScript", "Spring Boot", "MySQL", "MongoDB", "CI/CD"],
-    contribution: "Builds platform layer, data pipelines, and performance-safe implementation patterns.",
+    contribution: "Platform layer, service integration, and performance-safe implementation.",
     links: [{ label: "Portfolio", href: "https://www.devzinko.site/" }],
   },
 ];
 
-const diveSignals = [
-  ["Date", "Jul 25-26, 2026"],
-  ["Venue", "BEXCO Exhibition Center 2, Hall 4F / Busan"],
-  ["Participants", "Around 300 participants"],
-  ["Team size", "2 to 4 members per team"],
-  ["Awards", "Total 10,000,000 KRW"],
+const quickFacts = [
+  ["Team size", "4 members"],
+  ["Base", "Korea (Busan-linked execution)"],
+  ["Format", "2-4 member competition teams"],
+  ["Timeline", "Jul 25-26, 2026"],
 ];
 
-const programSteps = [
-  "Applications and document review",
-  "Online orientation then pre-development period",
-  "Submission of development proposals and tracks selection",
-  "Two-day final contest with onsite mentoring",
-  "Final presentation and awards",
-];
+const busanSignals = ["BEXCO-ready", "Coastal current", "Local context", "Fast demo energy"];
 
-const collaboration = [
+const operatingPrinciples = [
   {
-    title: "Clear command line",
-    detail:
-      "One lead sets priorities, each member has ownership, and the team checks checkpoints every day so nothing drifts before judge review.",
+    title: "Clear ownership",
+    detail: "Each lane has one owner with explicit boundaries and shared review checkpoints.",
   },
   {
-    title: "Busan-native execution",
-    detail:
-      "We are aligned for local pace, communication style, and on-site coordination for practical delivery and venue readiness.",
+    title: "Demo-first development",
+    detail: "Build a working core first, then improve presentation depth and visuals.",
   },
   {
-    title: "Demo-first rhythm",
-    detail:
-      "The product path is built around a visible demo, with a stable minimum viable output before polishing and storytelling.",
+    title: "On-site responsiveness",
+    detail: "We adapt quickly to mentor feedback and venue conditions during the two-day sprint.",
   },
   {
-    title: "Cross-skill resilience",
-    detail:
-      "Planning, AI, frontend, backend, and platform delivery are covered by different specialists to reduce single-point risk.",
+    title: "Skill redundancy",
+    detail: "Critical capabilities are covered by overlapping expertise to avoid one-point dependency.",
   },
 ];
 
-const readiness = [
-  ["Data to solution", "Real dataset understanding, cleaning, analysis logic, and solution framing from public data contexts."],
-  ["Web engineering", "Next.js and TypeScript production setup with robust UI, API, and deployment practices."],
-  ["AI prototypes", "Computer vision workflows for image enhancement and practical intelligence features."],
-  ["Experience design", "Interaction direction and media execution so judges can understand the value in one flow."],
-];
-
-const timeline = [
-  { day: "DAY 1", label: "Start sequence" },
-  { day: "DAY 2", label: "Demo and final presentations" },
-  { day: "Main Goal", label: "Prototype + clear story + repeatable demo" },
+const capabilityBars = [
+  ["Planning", "Problem framing, requirement shaping, and sprint planning for short-cycle execution."],
+  ["Data", "Data interpretation, baseline analytics thinking, and pragmatic modeling direction."],
+  ["Engineering", "Frontend, backend, and deployment-ready architecture for reliable delivery."],
+  ["Experience", "Interface behavior, interaction quality, and demo communication design."],
 ];
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-[#04060f] text-slate-100">
-      <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#04060f] py-8 sm:py-12">
+      <section className="relative isolate border-b border-white/10 bg-[#04060f] py-8 sm:py-12">
         <div className="absolute inset-0 -z-10 tech-grid opacity-40" />
         <div className="noise-bg absolute inset-0 -z-10" />
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 pb-10 pt-6 sm:px-8 lg:flex-row lg:items-end lg:justify-between lg:pb-16 lg:pt-8">
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <svg className="data-flow-layer absolute -top-6 left-1/2 h-[42vh] w-[120%] -translate-x-1/2" viewBox="0 0 1200 420" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="flowGlowA" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="rgba(93, 226, 255, 0.0)" />
+                <stop offset="45%" stopColor="rgba(93, 226, 255, 0.9)" />
+                <stop offset="100%" stopColor="rgba(93, 226, 255, 0)" />
+              </linearGradient>
+              <linearGradient id="flowGlowB" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="rgba(171, 212, 255, 0.0)" />
+                <stop offset="50%" stopColor="rgba(171, 212, 255, 0.85)" />
+                <stop offset="100%" stopColor="rgba(171, 212, 255, 0)" />
+              </linearGradient>
+              <linearGradient id="flowGlowC" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="rgba(165, 255, 250, 0.0)" />
+                <stop offset="50%" stopColor="rgba(165, 255, 250, 0.9)" />
+                <stop offset="100%" stopColor="rgba(165, 255, 250, 0)" />
+              </linearGradient>
+            </defs>
+            <path
+              id="flowA"
+              d="M-80 120 C 90 75, 220 195, 360 130 C 500 70, 640 230, 790 170 C 940 110, 1060 245, 1280 175"
+              className="data-current data-current-a"
+              pathLength="100"
+            />
+            <path
+              id="flowB"
+              d="M-80 265 C 85 300, 205 170, 350 230 C 500 300, 620 175, 780 230 C 925 285, 1050 120, 1280 190"
+              className="data-current data-current-b"
+              pathLength="100"
+            />
+            <path
+              id="flowC"
+              d="M-80 330 C 100 370, 215 290, 335 345 C 470 395, 600 275, 760 335 C 910 395, 1040 295, 1280 330"
+              className="data-current data-current-c"
+              pathLength="100"
+            />
+            <circle r="4" className="data-packet data-packet-a">
+              <animateMotion dur="5.2s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flowA" />
+              </animateMotion>
+            </circle>
+            <circle r="3" className="data-packet data-packet-b">
+              <animateMotion dur="6.4s" begin="-2s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flowB" />
+              </animateMotion>
+            </circle>
+            <circle r="5" className="data-packet data-packet-c">
+              <animateMotion dur="5.8s" begin="-3.2s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flowC" />
+              </animateMotion>
+            </circle>
+            <circle r="2.5" className="data-packet data-packet-a">
+              <animateMotion dur="4.8s" begin="-1.4s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flowA" />
+              </animateMotion>
+            </circle>
+            <circle r="3.5" className="data-packet data-packet-c">
+              <animateMotion dur="7s" begin="-4.4s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flowB" />
+              </animateMotion>
+            </circle>
+            <path
+              d="M80 392 L150 358 L218 392 L305 332 L390 392 L482 350 L560 392 L650 320 L725 392 L815 350 L910 392 L1040 334 L1130 392"
+              className="busan-skyline"
+            />
+          </svg>
+        </div>
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 pb-8 pt-6 sm:px-8 lg:flex-row lg:items-end lg:justify-between lg:pb-12 lg:pt-8">
           <div className="max-w-2xl">
             <p className="mb-5 inline-flex border border-cyan-300/40 bg-cyan-300/10 px-3 py-2 font-mono text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
-              DIVE 2026 Team Intro
+              SZLL Team Introduction
             </p>
             <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-7xl">SZLL</h1>
-            <p className="mt-4 max-w-xl text-lg text-cyan-100/80 sm:text-xl">
-              Built for real-world data hackathon execution. We are designed to move from{" "}
-              <span className="font-black text-cyan-300">problem framing to deployable demo</span> with predictable team flow.
+            <p className="mt-4 max-w-xl text-lg text-cyan-100/85 sm:text-xl">
+              A focused four-person team prepared for the DIVE 2026 challenge with clear ownership, Busan-aware execution, and demo-ready delivery.
             </p>
-            <nav className="mt-7 flex flex-wrap gap-4 text-xs font-black uppercase tracking-[0.18em]">
-              <a href="#members" className="border border-white/20 bg-white/5 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
-                Members
-              </a>
-              <a href="#program-fit" className="border border-white/20 bg-white/5 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
-                Program Fit
-              </a>
-              <a href="#contact" className="border border-white/20 bg-white/5 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
-                Contact
-              </a>
-            </nav>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {busanSignals.map((signal) => (
+                <span key={signal} className="border border-cyan-300/25 bg-cyan-300/10 px-3 py-1.5 font-mono text-[11px] font-black uppercase tracking-[0.14em] text-cyan-100">
+                  {signal}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="grid w-full max-w-xl gap-3 sm:grid-cols-2 lg:w-auto">
-            {diveSignals.map(([key, value]) => (
-              <article key={key} className="frost-panel p-4">
-                <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{key}</p>
+            {quickFacts.map(([title, value]) => (
+              <article key={title} className="frost-panel p-4">
+                <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{title}</p>
                 <p className="mt-1 text-sm leading-6 text-white/85">{value}</p>
               </article>
             ))}
@@ -157,39 +203,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:py-16">
-        <div className="frost-panel p-8">
-          <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-cyan-300">About DIVE 2026</p>
-          <h2 className="mt-4 text-balance text-4xl font-black leading-tight sm:text-5xl">Data, AI, and product thinking under real constraints.</h2>
-          <p className="mt-6 text-lg text-slate-200/80">
-            DIVE is a data-driven hackathon for practical teams to solve real problems with real data, guided by public and private sector
-            experts in Busan.
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <div className="frost-panel p-6 sm:p-10">
+          <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-cyan-300">About us</p>
+          <h2 className="mt-4 text-balance text-4xl font-black leading-tight sm:text-5xl">Team introduction with Busan execution energy</h2>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200/85">
+            We are a practical execution team for the Busan hackathon format. We combine planning, AI exploration, platform engineering, and
+            media-ready presentation to move from idea to usable prototype in a two-day sprint at the pace of a city built around ports,
+            data movement, and fast connections.
           </p>
-          <a
-            className="mt-8 inline-flex border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-cyan-200 transition hover:bg-cyan-300/20"
-            href="https://www.dxchallenge.co.kr/dive-2026"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open Official Program Page
-          </a>
-        </div>
-        <div className="frost-panel p-8">
-          <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-cyan-300">Flow Snapshot</p>
-          <ol className="mt-6 space-y-4 text-base leading-7 text-slate-200/88">
-            {programSteps.map((step) => (
-              <li key={step} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300" />
-                <span>{step}</span>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
-      <section id="members" className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:py-16">
+      <section id="members" className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Members</p>
-        <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Clear responsibilities, fast execution.</h2>
+        <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">Who does what.</h2>
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {members.map((member, index) => (
             <article
@@ -216,7 +244,7 @@ export default function Home() {
                 </p>
                 <p className="mt-5 text-base leading-7 text-slate-300/85">{member.summary}</p>
                 <div className="mt-5 border-l-4 border-cyan-300/60 pl-4">
-                  <p className="font-mono text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Expected contribution</p>
+                  <p className="font-mono text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Main responsibility</p>
                   <p className="mt-2 text-sm leading-6 text-slate-300/80">{member.contribution}</p>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -241,26 +269,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="program-fit" className="border-y border-white/10 bg-[#061122] px-5 py-12 sm:px-8 lg:px-0 lg:py-16">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.9fr_1.1fr]">
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <div className="grid gap-8 lg:grid-cols-2">
           <div>
-            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Execution model</p>
-            <h2 className="mt-3 max-w-2xl text-balance text-5xl font-black leading-tight sm:text-6xl">How SZLL builds toward winning.</h2>
+            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">How we work</p>
+            <h2 className="mt-3 text-balance text-5xl font-black leading-tight sm:text-6xl">Operating model</h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300/72">
-              Roles are assigned to checkpoints, not just titles. We keep the team moving with daily validation and explicit owner boundaries.
+              We do not present this as generic roles. We present it as a coordinated production system prepared for DIVE 2026 constraints.
             </p>
-            <div className="mt-8 grid gap-2 sm:grid-cols-2">
-              {timeline.map((item) => (
-                <div key={item.day} className="frost-panel p-4">
-                  <p className="font-mono text-xs font-black uppercase text-cyan-200">{item.day}</p>
-                  <p className="mt-2 text-slate-100">{item.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
-          <div className="grid gap-2 overflow-hidden border border-white/15 md:grid-cols-2">
-            {collaboration.map((item) => (
-              <div key={item.title} className="p-6 frost-panel">
+          <div className="grid gap-2">
+            {operatingPrinciples.map((item) => (
+              <div key={item.title} className="frost-panel p-5">
                 <h3 className="font-mono text-xl font-black uppercase text-cyan-200">{item.title}</h3>
                 <p className="mt-3 leading-7 text-slate-300/78">{item.detail}</p>
               </div>
@@ -269,34 +289,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
-          <div>
-            <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Readiness map</p>
-            <h2 className="mt-3 max-w-3xl text-balance text-5xl font-black leading-tight sm:text-6xl">What the team can execute.</h2>
-          </div>
-          <div className="divide-y-2 divide-white/10 border-y-2 border-white/15">
-            {readiness.map(([title, body]) => (
-              <div key={title} className="grid gap-4 py-6 sm:grid-cols-[180px_1fr]">
-                <h3 className="font-mono text-xl font-black uppercase text-cyan-200">{title}</h3>
-                <p className="text-lg leading-8 text-slate-300/80">{body}</p>
-              </div>
-            ))}
-          </div>
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <p className="font-mono text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Capability map</p>
+        <h2 className="mt-3 text-5xl font-black leading-tight sm:text-6xl">What we can deliver in two days.</h2>
+        <div className="mt-8 divide-y-2 divide-white/10 border-y-2 border-white/15">
+          {capabilityBars.map(([title, body]) => (
+            <div key={title} className="grid gap-4 py-6 sm:grid-cols-[170px_1fr]">
+              <h3 className="font-mono text-xl font-black uppercase text-cyan-200">{title}</h3>
+              <p className="text-lg leading-8 text-slate-300/80">{body}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section id="contact" className="border-t border-white/10 bg-[#061122] px-5 py-12 sm:px-8 lg:py-16">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
-          <h2 className="max-w-4xl text-balance text-5xl font-black leading-tight sm:text-6xl">
-            Built to collaborate, execute, and present at DIVE 2026.
-          </h2>
+      <section id="contact" className="border-t border-white/10 bg-[#061122] px-5 py-12 sm:px-8">
+        <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <h2 className="max-w-4xl text-balance text-5xl font-black leading-tight sm:text-6xl">Focused team. Real execution. DIVE 2026 ready.</h2>
           <div className="border border-cyan-300/40 bg-[#050814] p-5">
             <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-cyan-300">Primary contact</p>
             <a className="mt-3 block text-2xl font-black text-cyan-100 hover:text-white" href="mailto:davidbeljar@gmail.com">
               davidbeljar@gmail.com
             </a>
-            <p className="mt-4 text-sm leading-6 text-slate-200/70">Team name: SZLL / DIVE 2026 Hackathon / Busan</p>
+            <p className="mt-4 text-sm leading-6 text-slate-200/70">Team name: SZLL / Busan DIVE 2026 Hackathon</p>
           </div>
         </div>
       </section>

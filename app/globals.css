@@ -47,6 +47,85 @@ a {
   mix-blend-mode: screen;
 }
 
+.data-flow-layer {
+  opacity: 0.8;
+}
+
+.data-current {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: dataFlow 4.5s linear infinite;
+}
+
+.data-current-a {
+  stroke: url(#flowGlowA);
+  color: #5de2ff;
+  stroke-dasharray: 18 28;
+  animation-duration: 4.2s;
+}
+
+.data-current-b {
+  stroke: url(#flowGlowB);
+  color: #a8d5ff;
+  stroke-dasharray: 16 32;
+  animation-duration: 5.3s;
+}
+
+.data-current-c {
+  stroke: url(#flowGlowC);
+  color: #a5fffa;
+  stroke-dasharray: 14 24;
+  animation-duration: 4.8s;
+}
+
+.data-packet {
+  fill: currentColor;
+  filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 18px currentColor);
+  opacity: 0.9;
+  animation: packetPulse 1.6s ease-in-out infinite;
+}
+
+.data-packet-a {
+  color: #5de2ff;
+}
+
+.data-packet-b {
+  color: #a8d5ff;
+}
+
+.data-packet-c {
+  color: #a5fffa;
+}
+
+.busan-skyline {
+  fill: none;
+  stroke: rgba(93, 226, 255, 0.26);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(93, 226, 255, 0.25));
+}
+
+@keyframes dataFlow {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes packetPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.86);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
 .text-balance {
   text-wrap: balance;
 }
@@ -75,7 +154,9 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .frost-panel,
-  .riseIn {
+  .riseIn,
+  .data-current,
+  .data-packet {
     animation: none;
     transition: none;
   }
